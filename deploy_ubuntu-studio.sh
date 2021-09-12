@@ -13,14 +13,9 @@ sudo apt install -y brave-browser
 git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 ~/.emacs.d/bin/doom install
 
-# bitwig
-# first download
-sudo dpkg -i bitwig-studio.deb
-sudo apt -f install -y
-
 # flatpaks
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.signal.Signal com.spotify.Client
+flatpak install flathub org.signal.Signal com.spotify.Client com.bitwig.BitwigStudio
 
 # dotfiles
 cd ~/
