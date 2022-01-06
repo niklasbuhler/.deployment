@@ -2,13 +2,19 @@
 collection of files to help deploying my systems fast
 
 # there are the following systems available
-## nixos
+## linux
+### nixos
 server and desktop to use the latest linux features (pipewire, systemd, wayland, systemd-boot etc)
-## void
+### void
 unix like rolling release build
-## debian
+### debian
 fully featured systemd install for servers and complex usecases
-## devuan
+### devuan
 smaller unix like desktop build
-## freebsd
-## openbsd
+### ubuntu (studio) 
+set and forget oldschool desktop
+### fedora 35
+set and forget newschool desktop
+## bsd
+### freebsd
+### openbsd
