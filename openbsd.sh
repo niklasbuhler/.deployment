@@ -18,8 +18,8 @@ echo 'permit persist keepenv niklas' > /etc/doas.conf
 
 ################################################ USER
 # install desktop
-doas pkg_add emacs vim lilypond git git-crypt github-cli groff rsync stow curl unison ledger rclone ffmpeg sox borgbackup password-store flac
-doas pkg_add dunst picom feh zathura zathura-pdf-poppler zathura-ps syncthing neofetch youtube-dl mumble audacity blender gimp mpv thunderbird fish mpd
+doas pkg_add emacs vim lilypond git git-crypt github-cli groff rsync stow curl unison ledger rclone ffmpeg sox borgbackup password-store flac font-awesome
+doas pkg_add dunst picom feh zathura zathura-pdf-poppler zathura-ps syncthing neofetch youtube-dl mumble audacity blender gimp mpv thunderbird chrome fish mpd
 # must maybe add /usr/local/bin/fish to /etc/shells
 chsh -s /usr/local/bin/fish
 doas rcctl enable xenodm
@@ -75,7 +75,7 @@ git clone https://github.com/niklasbuhler/.dotfiles.git ~/git/dotfiles
 
 mkdir ~/.emacs.d
 stow ~/git/dotfiles/emacs -t ~/
-cd ~/git/dotfiles && stow xorg/ -t ~/
+cd ~/git/dotfiles && stow xorg-openbsd/ -t ~/
 cd ~/
 mkdir ~/.config
 mkdir ~/.config/fish
