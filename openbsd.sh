@@ -18,8 +18,8 @@ echo 'permit persist keepenv niklas' > /etc/doas.conf
 
 ################################################ USER
 # install desktop
-doas pkg_add emacs vim lilypond git git-crypt github-cli groff rsync stow curl unison ledger rclone ffmpeg sox borgbackup password-store flac font-awesome
-doas pkg_add dunst picom feh zathura zathura-pdf-poppler zathura-ps syncthing neofetch youtube-dl mumble audacity blender gimp mpv thunderbird chrome fish mpd
+doas pkg_add emacs vim lilypond git git-crypt github-cli groff rsync stow curl unison ledger rclone ffmpeg sox borgbackup password-store flac font-awesome ripgrep
+doas pkg_add dunst picom feh zathura zathura-pdf-poppler zathura-ps syncthing neofetch youtube-dl mumble audacity blender gimp mpv thunderbird chrome fish mpd fzf
 # must maybe add /usr/local/bin/fish to /etc/shells
 chsh -s /usr/local/bin/fish
 doas rcctl enable xenodm
@@ -73,8 +73,15 @@ make clean install
 cd ~/
 git clone https://github.com/niklasbuhler/.dotfiles.git ~/git/dotfiles
 
-mkdir ~/.emacs.d
-stow ~/git/dotfiles/emacs -t ~/
+# install doom emacs
+git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+~/.emacs.d/bin/doom install
+
+# uncomment for normal emacs
+# mkdir ~/.emacs.d
+# stow ~/git/dotfiles/emacs -t ~/
+
+# install dotfiles
 cd ~/git/dotfiles && stow xorg-openbsd/ -t ~/
 cd ~/
 mkdir ~/.config
@@ -85,3 +92,5 @@ cd ~/git/dotfiles && stow fish/ -t ~/
 doas ifconfig iwm0 up
 doas ifconfig iwm0 nwid "IO" wpakey "XXXXXXXXXXXXXX"
 doas dhclient iwm0
+
+
