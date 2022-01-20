@@ -20,6 +20,7 @@ echo 'permit persist keepenv niklas' > /etc/doas.conf
 # install desktop
 doas pkg_add emacs vim lilypond git git-crypt github-cli groff rsync stow curl unison ledger rclone ffmpeg sox borgbackup password-store flac font-awesome ripgrep
 doas pkg_add dunst picom feh zathura zathura-pdf-poppler zathura-ps syncthing neofetch youtube-dl mumble audacity blender gimp mpv thunderbird chrome fish mpd fzf
+doas pkg_add rnnoise musescore paulstretch metronome zynaddsubfx audacity chromaprint checkmate abcde timidity soundtracker soundtouch rubberband solfege gimp hydrogen timidity fluidsynth flac lame espeak cuetools caps-plugins calf tap-plugins lmms milkytracker goattracker
 # must maybe add /usr/local/bin/fish to /etc/shells
 chsh -s /usr/local/bin/fish
 doas rcctl enable xenodm
